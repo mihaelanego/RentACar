@@ -1,0 +1,22 @@
+.register-form {
+  width: 300px;
+  margin: 0 auto;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+.register-form h1 {
+  text-align: center;
+  color: #4d4d4d;
+  font-size: 24px;
+  padding: 20px 0 20px 0;
+}
+
+.register-form input[type="password"],
+.register-form input[type="text"],
+.register-form select {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #dddddd;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}

@@ -1,0 +1,63 @@
+<h2>Update car</h2>
+<form method="post">
+  <div class="mb-3">
+    <label for="registrationNr" class="form-label">Registration #</label>
+    <input
+      class="form-control"
+      name="registrationNr"
+      id="registrationNr"
+      value="{{car.registration_nr}}"k
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="manufacturingYear" class="form-label">Manufacturing Year</label>
+    <input
+      class="form-control"
+      type="number"
+      name="manufacturingYear"
+      id="manufacturingYear"
+      value="{{car.manufacturing_year}}"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="pricePerDay" class="form-label">Price/day</label>
+    <input
+      class="form-control"
+      type="number"
+      name="pricePerDay"
+      id="pricePerDay"
+      value="{{car.price_day}}"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="color" class="form-label">Color</label>
+    <select class="form-select" name="color" id="color">
+      <option {{#if (checkValue car.color "white")}}selected{{/if}} value="white">White</option>
+      <option {{#if (checkValue car.color "black")}}selected{{/if}} value="black">Black</option>
+      <option {{#if (checkValue car.color "gray")}}selected{{/if}} value="gray">Gray</option>
+      <option {{#if (checkValue car.color "red")}}selected{{/if}} value="red">Red</option>
+      <option {{#if (checkValue car.color "pink")}}selected{{/if}} value="pink">Pink</option>
+      <option {{#if (checkValue car.color "blue")}}selected{{/if}} value="blue">Blue</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="carType" class="form-label">Car type</label>
+    <select class="form-select" name="carType" id="carType">
+      {{#each carTypes}}
+        <option {{#if (checkValue ../car.car_type_ID this.ID)}}selected{{/if}} value="{{this.ID}}">{{this.producer}} {{this.name}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="agency" class="form-label">Agency</label>
+    <select class="form-select" name="agency" id="agency">
+      {{#each agencies}}
+        <option {{#if (checkValue ../car.agency_ID this.ID)}}selected{{/if}} value="{{this.ID}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

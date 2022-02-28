@@ -1,0 +1,1 @@
+alter table customer add is_admin BIT default 'FALSE'

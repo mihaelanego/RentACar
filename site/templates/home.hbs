@@ -1,0 +1,47 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css"
+  integrity="sha512-Jk4AqjWsdSzSWCSuQTfYRIF84Rq/eV0G2+tu07byYwHcbTGfdmLrHjUSwvzp5HvbiqK4ibmNwdcG49Y5RGYPTg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"
+  integrity="sha512-IaaKO80nPNs5j+VLxd42eK/7sYuXQmr+fyywCNA0e+C6gtQnuCXNtORe9xR4LqGPz5U9VpH+ff41wKs/ZmC3iA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/sql.min.js"
+  integrity="sha512-LxrbI3MKe/9KnjAs8zlLrZFRpp2J+jp0pML7zd6OAo/LHH8CEKM2Ef/jTfSX1gm8Auex3J5Jdj0rMkYejmMVMQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<link rel="stylesheet" href="/static/home.css" />
+
+{{#each rows}}
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-8">
+          <h2>{{#if this.info.complexity}}
+              <span class="badge bg-danger">Complex</span>
+            {{else}} <span class="badge bg-info">Simplu</span> {{/if}}
+            {{this.info.name}}
+          </h2>
+          <p class="lead">{{this.info.description}}</p>
+          <pre>
+            <code class="language-sql">{{this.code}}</code>
+          </pre>
+        </div>
+        <div class="col-md-4">
+          {{{table this.data}}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /><br />
+{{/each}}
+
+<script>hljs.highlightAll();</script>

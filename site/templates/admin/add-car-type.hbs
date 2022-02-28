@@ -1,0 +1,29 @@
+<h2>Add a new car type</h2>
+<form method="post">
+  <div class="mb-3">
+    <label for="producer" class="form-label">Producer</label>
+    <input class="form-control" name="producer" id="producer" required />
+  </div>
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input class="form-control" name="name" id="name" required />
+  </div>
+  <div class="mb-3">
+    <label for="type" class="form-label">Type</label>
+    <select class="form-select" name="type" id="type">
+      <option value="SUV">SUV</option>
+      <option value="Sedan">Sedan</option>
+      <option value="Combi">Combi</option>
+    </select>
+  </div>
+  <div class="mb-3 form-check">
+    <input
+      type="checkbox"
+      class="form-check-input"
+      name="automatic"
+      id="automatic"
+    />
+    <label class="form-check-label" for="automatic">Is automatic</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

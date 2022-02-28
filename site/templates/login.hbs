@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="/static/login.css" />
+<body>
+  <div class="login-form">
+    <h1>Login Form</h1><a href="/register">Register instead</a>
+    <form action="/auth/login" method="POST">
+      <input type="text" name="mail" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <div class="d-grid gap-2">
+        <input class="btn btn-primary" type="submit" />
+      </div>
+    </form>
+  </div>
+</body>
